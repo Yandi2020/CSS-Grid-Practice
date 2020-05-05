@@ -1,0 +1,78 @@
+body{
+    color: #fff;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+#content div{
+    background: #3bbced;
+    padding: 30px;
+}
+
+#content div:nth-child(even){
+    background-color: #777;
+}
+
+#content{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(150px,auto);
+    gap: 10px;
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+/* 05. Nested Grids */
+    /* Grab the container and display it as Grid */
+    .nested{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .nested p{
+        border: 1px solid salmon;
+        padding: 20px;
+        margin: 0;
+    }
+
+    /* Another way to change columns, from the starting point, and span to
+       column 3 */
+
+    /* .nested{
+        grid-column: span 3 ;
+    } */
+
+
+/* 06. align and justify items */
+
+    /* grab the grid container */
+    #content{
+        /* align-items: start; */
+        /* each grid unit move to the top of the row, rather than 
+           take the full height of the row, by default is stretch */
+
+        /* justify-items: start; */
+        /* each grid unit move to the left side of the column,rather 
+           than take the full width of the column, by default is stretch */
+    }
+
+    /* grab individual grid unit inside the grid container */
+    .one{
+        justify-self: end;
+        /* justify-content and align-content are for flexbox;
+           justify-items/self and align-items/self are for grid */
+
+        align-self: end;
+    }
+
+    .two{
+        justify-self: center;
+        align-self: center;
+    }
+
+    .three{
+        justify-self: start;
+        align-self: start;
+    }
+
